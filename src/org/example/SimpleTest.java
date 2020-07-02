@@ -1,16 +1,18 @@
 package org.example;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SimpleTest {
+    private static final Logger log = LogManager.getLogger();
     @Test
     public void testSumm() {
+        log.info("Сейчас мы будем проверять сумму");
         Assert.assertEquals("11 + 11 = 22", 22, 11 + 11);
+        log.info("Тест прошёл успешно!");
     }
-    // FIXME Test passes, but too fast! I don't understand what's happened!
-    // TODO:
-    //  1) Download Log4j2
-    //  2) Add to libs
-    //  3) Update Idea class path
+    // FIXME We see only error messages!
+    // TODO Add
 }
