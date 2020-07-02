@@ -9,5 +9,8 @@ public class SimpleTest {
         Assert.assertEquals("11 + 11 = 22", 22, 11 + 11);
     }
     // FIXME Test passes, but too fast! I don't understand what's happened!
-    // TODO Add logging
+    // TODO:
+    //  1) Download Log4j2
+    //  2) Add to libs
+    //  3) Update Idea class path
 }
