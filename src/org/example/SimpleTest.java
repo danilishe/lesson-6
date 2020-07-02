@@ -13,6 +13,5 @@ public class SimpleTest {
         Assert.assertEquals("11 + 11 = 22", 22, 11 + 11);
         log.info("Тест прошёл успешно!");
     }
-    // FIXME We see only error messages!
-    // TODO Add
+    // FIXME Dependencies are too big! Use Maven!
 }
