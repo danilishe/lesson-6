@@ -11,8 +11,7 @@ import org.junit.Test;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Properties;
 
 import static org.junit.Assert.assertEquals;
 
@@ -91,5 +90,13 @@ public class SimpleTest {
         Human deyamledMe = new Yaml().load(new FileInputStream("me.yml"));
         System.out.println(deyamledMe);
         assertEquals(me, deyamledMe);
+    }
+
+    @Test
+    public void readProperties() throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileReader("D:\\Lanit_AT-school\\Maven&Log4j2\\src\\test\\resources\\simple.properties"));
+        log.info(properties);
+        log.warn("any.other.value: {}", properties.getProperty("any.other.value"));
     }
 }
