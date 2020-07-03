@@ -8,10 +8,11 @@ import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
+import org.yaml.snakeyaml.Yaml;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -78,5 +79,17 @@ public class SimpleTest {
         Human deserializedCleverAutotester = gson.fromJson(cleverAtJson, Human.class);
 
         assertEquals(cleverAutotester, deserializedCleverAutotester);
+    }
+
+    @Test
+    public void serializationWithYaml() throws IOException {
+
+        Human me = new Human().setAge(37).setGender(Gender.MALE).setName("Данил");
+
+//        yaml.dump(me, new FileWriter("me.yml"));
+
+        Human deyamledMe = new Yaml().load(new FileInputStream("me.yml"));
+        System.out.println(deyamledMe);
+        assertEquals(me, deyamledMe);
     }
 }

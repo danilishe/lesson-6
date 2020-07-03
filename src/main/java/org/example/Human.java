@@ -3,9 +3,9 @@ package org.example;
 import java.io.Serializable;
 
 public class Human implements Serializable {
-    String name;
-    int age;
-    Gender gender;
+    public String name;
+    public int age;
+    public Gender gender;
 
     public String getName() {
         return name;
